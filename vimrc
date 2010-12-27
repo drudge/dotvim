@@ -1,63 +1,130 @@
-scriptencoding utf-8
-
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
-set modelines=0
-set nocp
+"" default to insert mode for most code files
+"au BufWinEnter * set noinsertmode
+"au BufWinEnter .vimrc,*.php,*.js,*.inc,*.jade,*.c,*.ejs,*.css,*.html,*.htm set insertmode | imap <buffer> <Esc> <C-l>
 
-set wildmenu " turn on command line completion wild style
-set wildmode=longest " turn on wild mode huge list
-set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-
-let mapleader=","
+scriptencoding utf-8
 set encoding=utf-8
-set showmode
-set cursorline
 set number
+set numberwidth=4
+set cinoptions=
+set foldenable
+set laststatus=2 " always show the status line
+set cmdheight=2
+set cursorline " highlight current linefiletype indent off
+set showcmd
+set showfulltag
+set shortmess+=ts
+set wildmenu " turn on command line completion wild style
+set wildmode=list:longest " turn on wild mode huge list
+set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
+set mouse=a
+set iskeyword+=_,$,@,%,# " none of these are word dividers
+set nostartofline
+set novisualbell
 set showmatch
+set expandtab
 set ignorecase
+set infercase
+set shiftround
 set smartcase
+set shiftwidth=4
+set softtabstop=4
+set tabstop=8
+set ruler
+set backspace=eol,start,indent " backspace crosses newlines?
 set clipboard=unnamed
 set scrolloff=4
 set hlsearch
 set incsearch
-set lazyredraw
-set cmdheight=1
-set guioptions=acegi
-set ruler
-set backspace=eol,start,indent " backspace crosses newlines?
-set cpoptions+=$
-filetype plugin on
-filetype plugin indent on
-let objc_syntax_for_h=1
-let filetype_m='objc'
-" use 4 space tabs and indents
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+let mapleader=','
+set autochdir
 set smarttab " tabs to indent, spaces to align
-set cmdheight=2
-set laststatus=2
-set showcmd
-set showfulltag
-set shortmess+=ts
-let g:CommandTMaxHeight=5
-set ofu=syntaxcomplete#Complete
-colorscheme xoria256
-set vb
-set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+set updatetime=1000
+set whichwrap+=<>[]
+set display=lastline " show as much of the last line as possible
+set showmatch
+set matchtime=2
+set timeout timeoutlen=3000 ttimeoutlen=100 " adjust map/key timeouts
 
-map j gj
-map k gk
+set hidden " allow hidden buffers, rather than closing
 
-nnoremap <silent> <Leader>fw :FufBuffer<CR>
-nnoremap <silent> <Leader>fj :FufFile<CR>
-nnoremap <silent> <Leader>fd :FufDir<CR>
-nnoremap <silent> <Leader>ft :FufTag<CR>
-nnoremap <silent> <Leader>fq :FufQuickfix<CR>
+set foldmethod=syntax
+set foldlevelstart=99
 
-nmap <silent> <leader>/ :nohlsearch<CR>
-nnoremap / /\v
-vnoremap / /\v
+set autoread " automatically reload files changed outside Vim
+set autowrite " automatically write files when doing things like :make
+set modeline
+set modelines=5
+
+" open help on bottom
+cnoreabbrev h bot h
+
+"set completeopt= " don't use a pop up menu for completions
+filetype plugin indent on " load filetype plugins/indent settings
+filetype on
+colorscheme sidetracked
+syntax on " syntax highlighting on
+
+let g:acp_behaviorSnipmateLength='1'
+
+" taglist stuff
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Auto_Open='1'
+let Tlist_File_Fold_Auto_Close='1'
+let Tlist_Enable_Fold_Column='0'
+let Tlist_Exit_OnlyWindow='1'
+let Tlist_Compact_Format='1'
+let Tlist_Process_File_Always='1'
+let Tlist_Show_Menu='1'
+"let Tlist_GainFocus_On_ToggleOpen='1'
+au BufEnter __Tag_List__ :setlocal statusline=Tag\ List
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete 
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
+autocmd FileType c set omnifunc=ccomplete#Complete 
+
+set nocompatible " explicitly get out of vi-compatible mode
+set noexrc " don't use local version of .(g)vimrc, .exrc
+set cpoptions=aABceFsmq
+"             |||||||||
+"             ||||||||+-- When joining lines, leave the cursor 
+"             |||||||      between joined lines
+"             |||||||+-- When a new match is created (showmatch) 
+"             ||||||      pause for .5
+"             ||||||+-- Set buffer options when entering the 
+"             |||||      buffer
+"             |||||+-- :write command updates current file name
+"             ||||+-- Automatically add <CR> to the last line 
+"             |||      when using :@r
+"             |||+-- Searching continues at the end of the match 
+"             ||      at the cursor position
+"             ||+-- A backslash has no special meaning in mappings
+"             |+-- :write updates alternative file name
+"             +-- :read updates alternative file name
+
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              | | | | |  |   |      |  |     |    + current 
+"              | | | | |  |   |      |  |     |       column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax in 
+"              | | | | |  |   |          square brackets
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
+
+if has("gui_running")
+    set guioptions=egmrt
+endif
