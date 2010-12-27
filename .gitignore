@@ -1,9 +1,8 @@
+*.swp
+*~*
+
 .DS_Store
-Icon?
+.svn
+profile
 
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+tags
