@@ -19,17 +19,13 @@ endif
 
 let g:colors_name = "sidetracked"
 
-syn match parens /[(){}]/
-hi parens                  guifg=#555a5e ctermfg=103
-
-
 highlight link htmlTag                     xmlTag
 highlight link htmlTagName                 xmlTagName
 highlight link htmlEndTag                  xmlEndTag
 
 highlight Normal                    guifg=#E6E1DC guibg=#272727 
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
-highlight CursorLine   cterm=none          ctermbg=238 gui=none            guibg=#444444
+highlight CursorLine   cterm=NONE          ctermbg=238 gui=NONE            guibg=#444444
 highlight Comment                   guifg=#6A5A3C ctermfg=180 
 highlight Constant                  guifg=#D8B778 ctermfg=73
 highlight Define                    guifg=#CC7833 ctermfg=173
@@ -60,13 +56,13 @@ highlight Special                   guifg=#555a5e ctermfg=167
 
 highlight ModeMsg		    guifg=#5A647E		ctermfg=lightblue
 highlight MoreMsg		    ctermfg=darkgreen	ctermfg=darkgreen
-highlight Question		    guifg=green gui=none ctermfg=green cterm=none
+highlight Question		    guifg=green gui=NONE ctermfg=green cterm=NONE
 highlight NonText		    guifg=#0030ff		ctermfg=darkblue
 
-highlight StatusLine                cterm=bold  ctermfg=fg  ctermbg=239 gui=bold    guifg=fg    guibg=#4e4e4e
-highlight StatusLineNC              cterm=none  ctermfg=fg  ctermbg=237 gui=none    guifg=fg    guibg=#3a3a3a
+highlight StatusLine                cterm=bold  ctermfg=NONE  ctermbg=239 gui=bold    guifg=NONE    guibg=#4E4E4E
+highlight StatusLineNC              cterm=NONE  ctermfg=NONE  ctermbg=237 gui=NONE    guifg=NONE    guibg=#3A3A3A
 
-highlight VertSplit	            guifg=none guibg=none gui=none		ctermfg=black ctermbg=gray term=none cterm=none
+highlight VertSplit	            guifg=NONE guibg=NONE gui=NONE  ctermfg=black ctermbg=gray term=NONE cterm=NONE
 
 highlight Folded	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
 highlight FoldColumn	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
