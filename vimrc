@@ -80,7 +80,7 @@ cnoreabbrev h bot h
 
 "set completeopt= " don't use a pop up menu for completions
 filetype plugin indent on " load filetype plugins/indent settings
-filetype on
+
 colorscheme sidetracked
 syntax on " syntax highlighting on
 
