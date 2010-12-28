@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
@@ -5,11 +7,24 @@ silent! call pathogen#helptags()
 "au BufWinEnter * set noinsertmode
 "au BufWinEnter .vimrc,*.php,*.js,*.inc,*.jade,*.c,*.ejs,*.css,*.html,*.htm set insertmode | imap <buffer> <Esc> <C-l>
 
-scriptencoding utf-8
+" put backups and swap files somewhere out of the way
+set backupdir=~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.tmp,~/tmp,/var/tmp,/tmp
+set swapfile " do want
+set backup   " do want
+
+" persist undo across launches, vim 7.3+
+if has('persistent_undo')
+    set undodir=~/.tmp,~/tmp,/var/tmp,/tmp
+    set undofile
+endif
+
 set encoding=utf-8
 set number
 set numberwidth=4
-set cinoptions=
+set nocp    " we use vim, not vi
+set modelines=0 " practice safe vimming
+set nomodeline
 set foldenable
 set laststatus=2 " always show the status line
 set cmdheight=2
@@ -52,7 +67,6 @@ set foldmethod=syntax
 set foldlevelstart=99
 set autoread " automatically reload files changed outside Vim
 set autowrite " automatically write files when doing things like :make
-set modeline
 set modelines=5
 
 if exists('+autochdir')
@@ -129,4 +143,35 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 if has("gui_running")
     set guioptions=egmrt
+
+    if has("mac")
+        set guifont=Menlo:h11
+    endif
 endif
+
+" nicer looking tabs and whitespace
+if (&termencoding == "utf-8") || has("gui_running")
+    if v:version >= 700
+        set listchars=tab:»·,trail:·,extends:…,eol:¶
+        "let &showbreak=nr2char(8618).'   '
+        "let &showbreak='->  '
+    else
+        set listchars=tab:»·,trail:·,extends:…,eol:¶
+    endif
+endif
+set cpoptions+=$
+
+" Syntax customizations
+let is_posix=1
+let c_gnu=1
+let c_space_errors=1
+let c_curly_error=0
+let c_no_bracket_error=1
+let objc_syntax_for_h=1
+let filetype_m='objc'
+set cinoptions=g1,h3,t0,(0,W4
+
+" CommandT
+let g:CommandTMaxHeight=30
+
+
