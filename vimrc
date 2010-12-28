@@ -81,7 +81,6 @@ cnoreabbrev h bot h
 "set completeopt= " don't use a pop up menu for completions
 filetype plugin indent on " load filetype plugins/indent settings
 
-colorscheme sidetracked
 syntax on " syntax highlighting on
 
 let g:acp_behaviorSnipmateLength='1'
@@ -143,7 +142,8 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 if has("gui_running")
     set guioptions=egmrt
-
+    colorscheme sidetracked
+    
     if has("mac")
         set guifont=Menlo:h11
     endif
