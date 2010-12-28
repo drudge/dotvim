@@ -97,6 +97,11 @@ let Tlist_Show_Menu='1'
 "let Tlist_GainFocus_On_ToggleOpen='1'
 au BufEnter __Tag_List__ :setlocal statusline=Tag\ List
 
+" Conque stuff
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_CloseOnEnd = 1
+let g:ConqueTerm_InsertOnEnter = 0
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete 
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
