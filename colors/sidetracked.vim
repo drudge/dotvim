@@ -57,7 +57,7 @@ highlight Special                   guifg=#555a5e ctermfg=167
 highlight ModeMsg		    guifg=#5A647E		ctermfg=lightblue
 highlight MoreMsg		    ctermfg=darkgreen	ctermfg=darkgreen
 highlight Question		    guifg=green gui=NONE ctermfg=green cterm=NONE
-highlight NonText		    guifg=#0030ff		ctermfg=darkblue
+highlight NonText		    guifg=#272727		ctermfg=0
 
 highlight StatusLine                cterm=bold  ctermfg=black ctermbg=gray gui=bold    guifg=#888888    guibg=#E3E3E3
 highlight StatusLineNC              cterm=NONE  ctermfg=black  ctermbg=gray gui=NONE    guifg=#888888    guibg=#E3E3E3
