@@ -35,7 +35,7 @@ highlight Identifier                guifg=#af6730 ctermfg=73 gui=NONE cterm=NONE
 highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 highlight PreCondit                 guifg=#CCCCCC ctermfg=173 gui=NONE cterm=NONE
 highlight Keyword                   guifg=#af6730 ctermfg=173 cterm=NONE
-highlight LineNr                    guifg=#888888 ctermfg=159 guibg=#E3E3E3
+highlight LineNr                    guifg=#888888 ctermfg=black ctermbg=gray guibg=#E3E3E3
 highlight Pmenu                     guifg=#888888 ctermfg=159 guibg=#E3E3E3
 "hi link PmenuSbar Pmenu
 highlight PmenuSbar guifg=blue guibg=darkgray
