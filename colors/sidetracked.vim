@@ -59,8 +59,8 @@ highlight MoreMsg		    ctermfg=darkgreen	ctermfg=darkgreen
 highlight Question		    guifg=green gui=NONE ctermfg=green cterm=NONE
 highlight NonText		    guifg=#0030ff		ctermfg=darkblue
 
-highlight StatusLine                cterm=bold  ctermfg=NONE  ctermbg=239 gui=bold    guifg=#888888    guibg=#E3E3E3
-highlight StatusLineNC              cterm=NONE  ctermfg=NONE  ctermbg=237 gui=NONE    guifg=#888888    guibg=#E3E3E3
+highlight StatusLine                cterm=bold  ctermfg=black ctermbg=gray gui=bold    guifg=#888888    guibg=#E3E3E3
+highlight StatusLineNC              cterm=NONE  ctermfg=black  ctermbg=gray gui=NONE    guifg=#888888    guibg=#E3E3E3
 
 highlight VertSplit	            guifg=NONE guibg=NONE gui=NONE  ctermfg=black ctermbg=gray term=NONE cterm=NONE
 
