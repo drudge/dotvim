@@ -40,7 +40,6 @@ set scrolloff=4
 set hlsearch
 set incsearch
 let mapleader=','
-set autochdir
 set smarttab " tabs to indent, spaces to align
 set updatetime=1000
 set whichwrap+=<>[]
@@ -48,16 +47,19 @@ set display=lastline " show as much of the last line as possible
 set showmatch
 set matchtime=2
 set timeout timeoutlen=3000 ttimeoutlen=100 " adjust map/key timeouts
-
 set hidden " allow hidden buffers, rather than closing
-
 set foldmethod=syntax
 set foldlevelstart=99
-
 set autoread " automatically reload files changed outside Vim
 set autowrite " automatically write files when doing things like :make
 set modeline
 set modelines=5
+
+if exists('+autochdir')
+    set autochdir
+else
+    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
 
 " open help on bottom
 cnoreabbrev h bot h
