@@ -50,8 +50,11 @@ highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#658aaf ctermfg=167 gui=NONE cterm=NONE
 highlight Visual                    guibg=#5A647E ctermbg=60
 
-highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
-highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
+highlight DiffAdd                   guifg=#000000 ctermfg=7 guibg=#99DDA7ctermbg=71
+highlight DiffDelete                guifg=#D44950 ctermfg=7 guibg=#D44950 ctermbg=52
+highlight DiffChange                 guifg=#000000 ctermfg=7 guibg=#F6DF93 gui=NONE
+highlight DiffText                 guifg=#000000 ctermfg=7 guibg=#DFCB87 gui=NONE
+
 highlight Special                   guifg=#555a5e ctermfg=167 
 
 highlight ModeMsg		    guifg=#5A647E		ctermfg=lightblue

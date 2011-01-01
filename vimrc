@@ -69,6 +69,8 @@ set autoread " automatically reload files changed outside Vim
 set autowrite " automatically write files when doing things like :make
 set modelines=5
 
+set diffopt+=vertical
+
 if exists('+autochdir')
     set autochdir
 else
