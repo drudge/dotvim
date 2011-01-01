@@ -86,6 +86,7 @@ filetype plugin indent on " load filetype plugins/indent settings
 syntax on " syntax highlighting on
 
 let g:acp_behaviorSnipmateLength='1'
+let g:SuperTabDefaultCompletionType = "context"
 
 " taglist stuff
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
