@@ -37,7 +37,6 @@ highlight PreCondit                 guifg=#CCCCCC ctermfg=173 gui=NONE cterm=NON
 highlight Keyword                   guifg=#af6730 ctermfg=173 cterm=NONE
 highlight LineNr                    guifg=#888888 ctermfg=black ctermbg=gray guibg=#E3E3E3
 highlight Pmenu                     guifg=#888888 ctermfg=159 guibg=#E3E3E3
-"hi link PmenuSbar Pmenu
 highlight PmenuSbar guifg=blue guibg=darkgray
 highlight PmenuThumb guifg=#c0c0c0
 highlight Number                    guifg=#A5C261 ctermfg=107
@@ -70,7 +69,6 @@ highlight VertSplit	            guifg=NONE guibg=NONE gui=NONE  ctermfg=black ct
 highlight Folded	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
 highlight FoldColumn	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
 
-
 highlight phpConstant               guifg=#D8B778 ctermfg=167
 highlight pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 highlight rubyBlockParameter        guifg=#FFFFFF ctermfg=15
@@ -95,4 +93,3 @@ highlight SpellBad                  guifg=#D70000 ctermfg=160 ctermbg=NONE cterm
 highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
-
