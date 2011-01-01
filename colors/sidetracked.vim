@@ -52,8 +52,8 @@ highlight Visual                    guibg=#5A647E ctermbg=60
 
 highlight DiffAdd                   guifg=#000000 ctermfg=7 guibg=#99DDA7ctermbg=71
 highlight DiffDelete                guifg=#D44950 ctermfg=7 guibg=#D44950 ctermbg=52
-highlight DiffChange                 guifg=#000000 ctermfg=7 guibg=#F6DF93 gui=NONE
-highlight DiffText                 guifg=#000000 ctermfg=7 guibg=#DFCB87 gui=NONE
+highlight DiffChange                guifg=#000000 ctermfg=7 guibg=#F6DF93 gui=NONE
+highlight DiffText                  guifg=#000000 ctermfg=7 guibg=#C6B479 gui=NONE
 
 highlight Special                   guifg=#555a5e ctermfg=167 
 
@@ -95,3 +95,4 @@ highlight SpellBad                  guifg=#D70000 ctermfg=160 ctermbg=NONE cterm
 highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
+
