@@ -62,7 +62,7 @@ set display=lastline " show as much of the last line as possible
 set showmatch
 set matchtime=2
 set timeout timeoutlen=3000 ttimeoutlen=100 " adjust map/key timeouts
-set hidden " allow hidden buffers, rather than closing
+"set hidden " allow hidden buffers, rather than closing
 set foldmethod=syntax
 set foldlevelstart=99
 set autoread " automatically reload files changed outside Vim
