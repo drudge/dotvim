@@ -46,3 +46,9 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/snipmate-nodejs"]
+	path = bundle/snipmate-nodejs
+	url = git@github.com:drudge/snipmate-nodejs.git
