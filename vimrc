@@ -12,6 +12,7 @@ set backupdir=~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.tmp,~/tmp,/var/tmp,/tmp
 set swapfile " do want
 set backup   " do want
+set backupcopy=yes 
 
 " persist undo across launches, vim 7.3+
 if has('persistent_undo')
@@ -153,7 +154,7 @@ if has("gui_running")
     colorscheme sidetracked
     
     if has("mac")
-        set guifont=Menlo:h11
+        set guifont=Consolas:h12
     endif
 endif
 
