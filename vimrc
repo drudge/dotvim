@@ -63,12 +63,14 @@ set display=lastline " show as much of the last line as possible
 set showmatch
 set matchtime=2
 set timeout timeoutlen=3000 ttimeoutlen=100 " adjust map/key timeouts
-"set hidden " allow hidden buffers, rather than closing
+set hidden " allow hidden buffers, rather than closing
 set foldmethod=syntax
 set foldlevelstart=99
 set autoread " automatically reload files changed outside Vim
 set autowrite " automatically write files when doing things like :make
 set modelines=5
+set switchbuf=usetab
+set noequalalways
 
 set diffopt+=vertical
 
@@ -92,6 +94,8 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 " taglist stuff
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Auto_Open='1'
+let Tlist_Use_Right_Window='1'
+let Tlist_Show_One_File='1'
 let Tlist_File_Fold_Auto_Close='1'
 let Tlist_Enable_Fold_Column='0'
 let Tlist_Exit_OnlyWindow='1'
@@ -183,6 +187,8 @@ set cinoptions=g1,h3,t0,(0,W4
 " CommandT
 let g:CommandTMaxHeight=30
 
+let NERDShutUp=1 " no more f*cking 'unknown filetype' warnings!
+
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
@@ -206,7 +212,7 @@ function s:CdIfDirectory(directory)
   let directory = explicitDirectory || empty(a:directory)
 
   if explicitDirectory
-    exe "cd " . a:directory
+    exe "cd \"" . a:directory . "\""
   endif
 
   if directory
