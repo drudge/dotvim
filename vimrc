@@ -91,6 +91,8 @@ syntax on " syntax highlighting on
 let g:acp_behaviorSnipmateLength='1'
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
+let g:PreviewBrowsers='Safari'
+
 " taglist stuff
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Auto_Open='1'
@@ -103,6 +105,8 @@ let Tlist_Compact_Format='1'
 let Tlist_Process_File_Always='1'
 let Tlist_Show_Menu='1'
 let g:tlist_javascript_settings = 'javascript;r:var;s:string;a:array;o:object;f:function;d:require'
+
+autocmd BufWritePost * :TlistUpdate
 
 "let Tlist_GainFocus_On_ToggleOpen='1'
 au BufEnter __Tag_List__ :setlocal statusline=Tag\ List

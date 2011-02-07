@@ -49,7 +49,7 @@ highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#658aaf ctermfg=167 gui=NONE cterm=NONE
 highlight Visual                    guibg=#5A647E ctermbg=60
 
-highlight DiffAdd                   guifg=#000000 ctermfg=7 guibg=#99DDA7ctermbg=71
+highlight DiffAdd                   guifg=#000000 ctermfg=7 guibg=#99DDA7 ctermbg=71
 highlight DiffDelete                guifg=#D44950 ctermfg=7 guibg=#D44950 ctermbg=52
 highlight DiffChange                guifg=#000000 ctermfg=7 guibg=#F6DF93 gui=NONE
 highlight DiffText                  guifg=#000000 ctermfg=7 guibg=#C6B479 gui=NONE
@@ -65,6 +65,14 @@ highlight StatusLine                cterm=bold  ctermfg=black ctermbg=gray gui=b
 highlight StatusLineNC              cterm=NONE  ctermfg=black  ctermbg=gray gui=NONE    guifg=#888888    guibg=#E3E3E3
 
 highlight VertSplit	            guifg=NONE guibg=NONE gui=NONE  ctermfg=black ctermbg=gray term=NONE cterm=NONE
+
+highlight Directory                 guifg=#555a5e ctermfg=103
+highlight netrwDir                  guifg=#555a5e ctermfg=103
+highlight treeDir	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
+highlight treeUp	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
+highlight treeCWD                   cterm=bold  ctermfg=black ctermbg=gray gui=bold    guifg=#888888    guibg=#E3E3E3
+
+
 
 highlight Folded	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
 highlight FoldColumn	            guifg=#808080 guibg=#272727 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
