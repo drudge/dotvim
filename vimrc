@@ -88,7 +88,6 @@ filetype plugin indent on " load filetype plugins/indent settings
 
 syntax on " syntax highlighting on
 
-let g:acp_behaviorSnipmateLength='1'
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 let g:PreviewBrowsers='Safari'
@@ -106,7 +105,7 @@ let Tlist_Process_File_Always='1'
 let Tlist_Show_Menu='1'
 let g:tlist_javascript_settings = 'javascript;r:var;s:string;a:array;o:object;f:function;d:require'
 
-autocmd BufWritePost * :TlistUpdate
+"autocmd BufWritePost * :TlistUpdate
 
 "let Tlist_GainFocus_On_ToggleOpen='1'
 au BufEnter __Tag_List__ :setlocal statusline=Tag\ List
@@ -197,8 +196,13 @@ let NERDShutUp=1 " no more f*cking 'unknown filetype' warnings!
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-autocmd FocusGained * call s:UpdateNERDTree()
+autocmd FocusGained * call s:UpdateSidebars()
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+function s:UpdateSidebars()
+    call s:UpdateNERDTree()
+    TlistUpdate
+endfunction
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
@@ -278,7 +282,7 @@ endfunction
 
 " Public NERDTree-aware versions of builtin functions
 function ChangeDirectory(dir, ...)
-  execute "cd " . a:dir
+  execute "cd \"" . a:dir . "\""
   let stay = exists("a:1") ? a:1 : 1
 
   NERDTree
