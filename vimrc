@@ -102,6 +102,8 @@ let Tlist_Exit_OnlyWindow='1'
 let Tlist_Compact_Format='1'
 let Tlist_Process_File_Always='1'
 let Tlist_Show_Menu='1'
+let g:tlist_javascript_settings = 'javascript;r:var;s:string;a:array;o:object;f:function;d:require'
+
 "let Tlist_GainFocus_On_ToggleOpen='1'
 au BufEnter __Tag_List__ :setlocal statusline=Tag\ List
 
