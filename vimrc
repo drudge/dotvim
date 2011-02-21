@@ -20,6 +20,8 @@ if has('persistent_undo')
     set undofile
 endif
 
+let macvim_hig_shift_movement = 1
+
 set encoding=utf-8
 set number
 set numberwidth=4
@@ -46,9 +48,9 @@ set ignorecase
 set infercase
 set shiftround
 set smartcase
-set shiftwidth=4
-set softtabstop=4
-set tabstop=8
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set ruler
 set backspace=eol,start,indent " backspace crosses newlines?
 set clipboard=unnamed
@@ -71,7 +73,7 @@ set autowrite " automatically write files when doing things like :make
 set modelines=5
 set switchbuf=usetab
 set noequalalways
-
+"set list listchars=tab:\ \ ,trail:·
 set diffopt+=vertical
 
 if exists('+autochdir')
