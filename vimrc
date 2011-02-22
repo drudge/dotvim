@@ -94,6 +94,11 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 let g:PreviewBrowsers='Safari'
 
+let NERDShutUp=1 " no more f*cking 'unknown filetype' warnings!
+" NERDTree configuration
+let g:NERDTreeIgnore = ['\.sock$', '\~$']
+map <Leader>n :NERDTreeToggle<CR>
+
 " taglist stuff
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Auto_Open='1'
@@ -194,22 +199,21 @@ set cinoptions=g1,h3,t0,(0,W4
 " CommandT
 let g:CommandTMaxHeight=30
 
-let NERDShutUp=1 " no more f*cking 'unknown filetype' warnings!
-" NERDTree configuration
-let NERDTreeIgnore=['\.sock$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateSidebars()
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 function s:UpdateSidebars()
-    call s:UpdateNERDTree()
-    TlistUpdate
+    try
+      call s:UpdateNERDTree()
+      TlistUpdate
+    catch /.*/ 
+      echo "Here"
+    endtry
 endfunction
 
- Project Tree
+" Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
@@ -254,6 +258,7 @@ endfunction
 
 " NERDTree utility function
 function s:UpdateNERDTree(...)
+  try
   let stay = 0
 
   if(exists("a:1"))
@@ -274,6 +279,7 @@ function s:UpdateNERDTree(...)
   if exists(":CommandTFlush") == 2
     CommandTFlush
   endif
+endtry
 endfunction
 
 " Utility functions to create file commands
@@ -356,7 +362,9 @@ call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
 call s:DefineCommand("mkdir", "Mkdir")
 
+ " Command-/ to toggle comments
+map <D-/> <plug>NERDCommenterToggle<CR>
+
+" Command-][ to increase/decrease indentation
 vmap <D-]> >gv
 vmap <D-[> <gv
-
-
