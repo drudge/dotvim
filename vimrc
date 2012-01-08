@@ -108,8 +108,8 @@ let Tlist_File_Fold_Auto_Close='1'
 let Tlist_Enable_Fold_Column='0'
 let Tlist_Exit_OnlyWindow='1'
 let Tlist_Compact_Format='1'
-let Tlist_Process_File_Always='1'
-let Tlist_Show_Menu='1'
+"let Tlist_Process_File_Always='1'
+"let Tlist_Show_Menu='1'
 let g:tlist_javascript_settings = 'javascript;r:var;s:string;a:array;o:object;f:function;d:require'
 
 "autocmd BufWritePost * :TlistUpdate
